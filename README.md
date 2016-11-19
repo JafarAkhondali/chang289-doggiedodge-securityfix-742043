@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ASP.NET Core Hello World
 
 A simple ASP.NET Core web application for the [ASP.NET Core buildpack][].
@@ -15,3 +16,6 @@ A simple ASP.NET Core web application for the [ASP.NET Core buildpack][].
 
 [Getting Started]: http://docs.asp.net/en/latest/getting-started/index.html
 [ASP.NET Core buildpack]: https://github.com/cloudfoundry-community/asp.net5-buildpack
+=======
+# doggiedodge
+>>>>>>> 12fc2cd111020943dfc961497cb477dcea1bbaa1
