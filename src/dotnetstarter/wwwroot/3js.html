@@ -26,6 +26,7 @@
  			var clock = new THREE.Clock();
  			var difficulty = 0;
 
+
 			function cube_construct(o, x, y, z, w, h, d, c){
 			       x=x*10;
 			        y=y*10;
@@ -107,8 +108,14 @@
 				return sphere;
 			}
 
-			function detectCollision() {
-
+			function detectCollision(doge, ball) {
+ 				if ((Math.abs(doge.position.x - ball.position.x) < 60) && (Math.abs(doge.position.y - ball.position.y) < 60)) {
+ 					console.log("Lose");
+ 					return 1;
+ 				}
+ 				else {
+ 					return 0;
+ 				}
 			}
 
 			function main() {
@@ -154,14 +161,17 @@
 
 					renderer.render(scene, camera);
 					for (var i = 0; i < particles.length; i++) {
+						detectCollision(cube, particles[i]);
 							particles[i].position.x -= 10+difficulty;
 							particles[i].rotation.x += 0.05;
 							particles[i].rotation.y += 0.05;
 							particles[i].rotation.z += 0.05;
 							if (particles[i].position.x <= -3000) {
 								scene.remove(particles[i]);
+								particles.shift();
 							}
 					}
+					console.log(particles.length);
 					counter++;
 				};
 				render();
