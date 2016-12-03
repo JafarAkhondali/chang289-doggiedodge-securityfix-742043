@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6764ba2-6e2b-4b6f-bd31-2b5576c47dd3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/Ridin.mp3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html" />
     </list>
@@ -29,9 +30,11 @@
       <file leaf-file-name="3js.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="11" column="21" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1139">
+              <caret line="68" column="21" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding>
+                <marker date="1480802507836" expanded="true" signature="5466:5472" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,8 +72,8 @@
       <file leaf-file-name="doge_pixel.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="170" column="41" selection-start-line="170" selection-start-column="38" selection-end-line="170" selection-end-column="41" />
+            <state relative-caret-position="102">
+              <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -79,8 +82,8 @@
       <file leaf-file-name="nyan.html" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Desktop/nyan.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="398" column="43" selection-start-line="398" selection-start-column="0" selection-end-line="399" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="294" column="24" selection-start-line="294" selection-start-column="20" selection-end-line="294" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -119,8 +122,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="677" />
-    <option name="y" value="5" />
+    <option name="x" value="448" />
+    <option name="y" value="11" />
     <option name="width" value="671" />
     <option name="height" value="727" />
   </component>
@@ -239,6 +242,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DoggieDodge\src\dotnetstarter\wwwroot" />
       <recent name="D:\DoggieDodge\src\dotnetstarter\wwwroot\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -338,15 +342,15 @@
       <workItem from="1480714489054" duration="344000" />
       <workItem from="1480714843093" duration="82000" />
       <workItem from="1480714935342" duration="472000" />
-      <workItem from="1480715417633" duration="32344000" />
+      <workItem from="1480715417633" duration="34919000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33571000" />
+    <option name="totallyTimeSpent" value="36146000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="677" y="5" width="671" height="727" extended-state="0" />
+    <frame x="448" y="11" width="671" height="727" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -396,7 +400,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1480802507836" expanded="true" signature="5466:5472" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -420,7 +426,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1480802507836" expanded="true" signature="5466:5472" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -444,7 +452,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1480802507836" expanded="true" signature="5466:5472" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -468,7 +478,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1480802507836" expanded="true" signature="5466:5472" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -530,17 +542,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/nyan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="398" column="43" selection-start-line="398" selection-start-column="0" selection-end-line="399" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1139">
+          <caret line="68" column="21" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <marker date="1480802507836" expanded="true" signature="5466:5472" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -560,10 +566,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html">
+    <entry file="file://$USER_HOME$/Desktop/nyan.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="170" column="41" selection-start-line="170" selection-start-column="38" selection-end-line="170" selection-end-column="41" />
+          <caret line="294" column="24" selection-start-line="294" selection-start-column="20" selection-end-line="294" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
           <folding />
         </state>
       </provider>
