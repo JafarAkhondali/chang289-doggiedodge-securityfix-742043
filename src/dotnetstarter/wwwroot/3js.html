@@ -63,14 +63,15 @@
 	scene.add(shadowLight);
 	var clock = new THREE.Clock();
 	var difficulty = 0;
+	var lose = 0;
 
 
 	function cube_construct(o, x, y, z, w, h, d, c){
-	    x=x*10;
-	    y=y*10;
-	    z=z*10;
-	    w=w*10;
-	    h=h*10;
+	    x=x*5;
+	    y=y*5;
+	    z=z*5;
+	    w=w*5;
+	    h=h*5;
 	    d=d*50;
 
 	    var material = new THREE.MeshLambertMaterial(
@@ -117,13 +118,14 @@
 		return xxx;
 	}	
 
-	function getRandomColor() {
-		var letters = '0123456789ABCDEF';
-			var color = '#';
-		for (var i = 0; i < 6; i++ ) {
-			color += letters[Math.floor(Math.random() * 16)];
+	function initial() {
+		console.log("1");
+		for (var i = 0; i < particles.length; i++) {
+			scene.remove(particles[i]);
 		}
-		return color;
+		particles = [];
+		clock = new THREE.Clock();	
+		difficulty = 0;		
 	}
 
 	function createParticle() {
@@ -147,7 +149,7 @@
 	}
 
 	function detectCollision(doge, ball) {
-		if ((Math.abs(doge.position.x - ball.position.x) < 60) && (Math.abs(doge.position.y - ball.position.y) < 60)) {
+		if ((Math.abs(doge.position.x - ball.position.x) < 35) && (Math.abs(doge.position.y - ball.position.y) < 35)) {
 			console.log("Lose");
 			return 1;
 		}
@@ -200,7 +202,12 @@
 
 			renderer.render(scene, camera);
 			for (var i = 0; i < particles.length; i++) {
-				detectCollision(cube, particles[i]);
+				lose = detectCollision(cube, particles[i]);
+				if (lose == 1) {
+					lose = 0;
+					initial();
+					break;
+				}
 				particles[i].position.x -= 10+difficulty;
 				particles[i].rotation.x += 0.05;
 				particles[i].rotation.y += 0.05;
@@ -212,14 +219,15 @@
 			}
 			console.log(particles.length);
 			counter++;
+			console.log(lose);
 		};
-		countUp(99999);
+		countUp(9999);
 		render();
 	}
 
 	function countUp(count)
 	{
-	  var div_by = 100000,
+	  var div_by = 1000,
 	      speed = Math.round(count / div_by),
 	      $display = $('.count'),
 	      run_count = 1,
