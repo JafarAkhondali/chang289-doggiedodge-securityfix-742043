@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6764ba2-6e2b-4b6f-bd31-2b5576c47dd3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html" />
     </list>
     <ignored path="DoggieDodge.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="3js.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="50" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,8 +58,8 @@
       <file leaf-file-name="wyb_practice_example.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_example.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-663">
-              <caret line="3" column="52" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="43" column="22" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -69,8 +68,8 @@
       <file leaf-file-name="doge_pixel.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-289">
-              <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+            <state relative-caret-position="343">
+              <caret line="201" column="19" selection-start-line="201" selection-start-column="19" selection-end-line="201" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -79,8 +78,8 @@
       <file leaf-file-name="nyan.html" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Desktop/nyan.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-731">
-              <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+            <state relative-caret-position="-391">
+              <caret line="76" column="22" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -335,11 +334,14 @@
       <recent name="D:\DoggieDodge\src\dotnetstarter\wwwroot" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.wyb_practice_example.html">
+  <component name="RunManager" selected="JavaScript Debug.3js.html">
     <configuration default="false" name="wyb_practice.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/DoggieDodge/src/dotnetstarter/wwwroot/wyb_practice.html">
       <method />
     </configuration>
     <configuration default="false" name="wyb_practice_example.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/DoggieDodge/src/dotnetstarter/wwwroot/wyb_practice_example.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="3js.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/DoggieDodge/src/dotnetstarter/wwwroot/3js.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -395,14 +397,16 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.wyb_practice.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.wyb_practice_example.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.3js.html" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.wyb_practice_example.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.wyb_practice.html" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.3js.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.wyb_practice_example.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.wyb_practice.html" />
       </list>
     </recent_temporary>
   </component>
@@ -423,15 +427,15 @@
       <workItem from="1480714489054" duration="344000" />
       <workItem from="1480714843093" duration="82000" />
       <workItem from="1480714935342" duration="472000" />
-      <workItem from="1480715417633" duration="27170000" />
+      <workItem from="1480715417633" duration="30719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28397000" />
+    <option name="totallyTimeSpent" value="31946000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="677" y="5" width="671" height="727" extended-state="1" />
+    <frame x="677" y="5" width="671" height="727" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -573,14 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -605,14 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_camera.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/doggieDodge.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -629,26 +617,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_example.html">
+    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_camera.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="697">
+          <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/nyan.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-731">
-          <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+        <state relative-caret-position="-391">
+          <caret line="76" column="22" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_example.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="43" column="22" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+        <state relative-caret-position="343">
+          <caret line="201" column="19" selection-start-line="201" selection-start-column="19" selection-end-line="201" selection-end-column="19" />
           <folding />
         </state>
       </provider>
