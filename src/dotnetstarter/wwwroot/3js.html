@@ -11,6 +11,7 @@
 	<body>
 		<script src="js\three.js\build\three.js"></script>
 		<script>
+			var ballTexture = new THREE.TextureLoader().load("/images/pokeball1.jpg");
 			var scene = new THREE.Scene();
 			var color = new THREE.Color("rgb(255,255,255)");
 			scene.background = color;
@@ -19,6 +20,62 @@
 			var particles = [];
 			var counter = 0;
 			var counterP = 0;
+			shadowLight = new THREE.DirectionalLight(0xffffff, .8);
+			shadowLight.position.set(1, 1, 1);
+ 			scene.add(shadowLight);
+
+
+			function cube_construct(o, x, y, z, w, h, d, c){
+			       x=x*15;
+			        y=y*15;
+			        z=z*15;
+			        w=w*15;
+			        h=h*15;
+			        d=d*50;
+
+			        var material = new THREE.MeshLambertMaterial(
+			                {
+			                    color: c
+			                } );
+			        var geometry = new THREE.CubeGeometry(w, h, d, 1, 1, 1);
+			        var mesh = new THREE.Mesh( geometry, material );
+			        mesh.position.x=x-(w/2);
+			        mesh.position.y=y;
+			        mesh.position.z=z;
+			        o.add( mesh );
+			    }
+
+ 			function dogGenerator() {
+	        		var xxx = new THREE.Object3D();
+	        		//face
+	        		cube_construct(xxx,-5,0,0,10,10,1,"rgb(234,177,62)");
+	        		cube_construct(xxx,-5.5,-2.5,0,7,5,1,"rgb(223,216,174)");
+
+	       		 //mouth
+	        		cube_construct(xxx,-6,-1,.5,2,1.5,1,"rgb(0,0,0)");
+	        		cube_construct(xxx,-6.5,-2,.5,1,0.5,1,"rgb(0,0,0)");
+	        		cube_construct(xxx,-6.5,-2.5,.5,4,0.5,1,"rgb(0,0,0)");
+	        		cube_construct(xxx,-10.5,-2,.5,0.5,0.5,1,"rgb(0,0,0)");
+
+	       		 //sunglass
+	        		cube_construct(xxx,-6,2.5,.5,9,0.5,1,"rgb(0,0,0)");
+	        		cube_construct(xxx,-6,1.6,.5,2.5,1.6,1,"rgb(0,0,0)");
+	        		cube_construct(xxx,-10,1.5,.5,3,2,1,"rgb(0,0,0)");
+
+	       		 //ears
+	       		 cube_construct(xxx,-12,5,0,3,1.5,1,"rgb(255, 223, 174)")
+	       		 cube_construct(xxx,-12.5,6,0,2,1,1,"rgb(255, 223, 174)")
+	        		cube_construct(xxx,-13,6.6,0,1,0.5,1,"rgb(255, 223, 174)")
+	       		 cube_construct(xxx,-13.25,7,0,0.5,0.25,1,"rgb(255, 223, 174)")
+
+	       		 cube_construct(xxx,-5,5,0,3,1.5,1,"rgb(255, 223, 174)")
+	      			  cube_construct(xxx,-5.5,6,0,2,1,1,"rgb(255, 223, 174)")
+	       		 cube_construct(xxx,-6,6.6,0,1,0.5,1,"rgb(255, 223, 174)")
+	       		 cube_construct(xxx,-6.25,7,0,0.5,0.25,1,"rgb(255, 223, 174)")
+
+	        		xxx.position.x=-700;
+	        		return xxx;
+    }
 
 			function getRandomColor() {
   				var letters = '0123456789ABCDEF';
@@ -31,34 +88,45 @@
 
 			function createParticle() {
 				var randomL = Math.random();
-				var randomW = Math.random();
-				var randomT = Math.random();
-				var geometry = new THREE.CubeGeometry(randomL*100, randomW*100, randomT * 100);
-				var c = getRandomColor();
-				var material = new THREE.MeshBasicMaterial({color : c});
-				var cube = new THREE.Mesh(geometry, material);
-				cube.position.x = 1000+randomL * 500;
-				cube.position.y = -1000+randomW * 2000;
-				return cube;
+				 var randomW = Math.random();
+				// var randomT = Math.random();
+				// var geometry = new THREE.BoxGeometry(randomL*20+20, randomW*20 + 20, randomT * 20 + 20);
+				// var color = new THREE.Color( getRandomColor() );
+				// var material = new THREE.MeshPhongMaterial({shading: THREE.FlatShading});
+				// material.color = color;
+				// var cube = new THREE.Mesh(geometry, material);
+
+				// return cube;
+
+				var geometry = new THREE.SphereBufferGeometry(50, 32, 32);
+				var material = new THREE.MeshPhongMaterial({ map: ballTexture});
+				var sphere = new THREE.Mesh(geometry, material);
+				sphere.position.x = 3000;
+				sphere.position.y = -1000+ randomL * 2000;
+				return sphere;
+			}
+
+			function detectCollision() {
+
 			}
 
 			function main() {
 				var texture = new THREE.TextureLoader().load("/images/dog.jpg");
 				texture.wrapS = THREE.RepeatWrapping;
 				texture.wrapT = THREE.RepeatWrapping;
-
-				var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+ 				 light = new THREE.HemisphereLight(0xffffff, 0xffffff, .3)
+ 				
+				// var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+				var camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 2000 );
+				camera.lookAt(new THREE.Vector3(2,0,-0.5));
 				var renderer = new THREE.WebGLRenderer();
 				renderer.setSize(window.innerWidth, window.innerHeight);
 				document.body.appendChild(renderer.domElement);
-				var geometry = new THREE.CubeGeometry(100, 100,100);
-				var material = new THREE.MeshBasicMaterial({map: texture});
-				// material.wireframe = true;
-				var cube = new THREE.Mesh(geometry, material);
-				cube.position.x = -700;
-				cube.position.y=0;
+				var cube = dogGenerator();
+				cube.position.z = 0;
+				scene.position.z = 100;
 				scene.add(cube);
-
+				scene.add(light);
 				camera.position.z = 1000;
 				var speedX = 0;
 				var speedY = 0;
@@ -68,7 +136,6 @@
 					mousePosY = event.clientY;
 				}
 				var render = function() {
-					console.log(counter);
 					if (counter % 10 == 0) {
 
 						particles.push(createParticle());
@@ -78,17 +145,20 @@
 						counterP++;
 					}
 					requestAnimationFrame( render );
-					cube.position.x = (mousePosX-1500);
-					cube.position.y=-(mousePosY -500) * 2.5;
+					cube.position.x = (mousePosX - 1/2 * window.innerWidth);
+					cube.position.y=-(mousePosY - 1/2 * window.innerHeight);
 
 					renderer.render(scene, camera);
 					for (var i = 0; i < particles.length; i++) {
 							particles[i].position.x -= 10;
 							particles[i].rotation.x += 0.05;
 							particles[i].rotation.y += 0.05;
-						}
+							particles[i].rotation.z += 0.05;
+							if (particles[i].position.x <= -3000) {
+								scene.remove(particles[i]);
+							}
+					}
 					counter++;
-
 				};
 				render();
 			}
