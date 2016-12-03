@@ -23,14 +23,15 @@
 			shadowLight = new THREE.DirectionalLight(0xffffff, .8);
 			shadowLight.position.set(1, 1, 1);
  			scene.add(shadowLight);
-
+ 			var clock = new THREE.Clock();
+ 			var difficulty = 0;
 
 			function cube_construct(o, x, y, z, w, h, d, c){
-			       x=x*15;
-			        y=y*15;
-			        z=z*15;
-			        w=w*15;
-			        h=h*15;
+			       x=x*10;
+			        y=y*10;
+			        z=z*10;
+			        w=w*10;
+			        h=h*10;
 			        d=d*50;
 
 			        var material = new THREE.MeshLambertMaterial(
@@ -98,7 +99,7 @@
 
 				// return cube;
 
-				var geometry = new THREE.SphereBufferGeometry(50, 32, 32);
+				var geometry = new THREE.SphereBufferGeometry(20, 32, 32);
 				var material = new THREE.MeshPhongMaterial({ map: ballTexture});
 				var sphere = new THREE.Mesh(geometry, material);
 				sphere.position.x = 3000;
@@ -111,6 +112,7 @@
 			}
 
 			function main() {
+
 				var texture = new THREE.TextureLoader().load("/images/dog.jpg");
 				texture.wrapS = THREE.RepeatWrapping;
 				texture.wrapT = THREE.RepeatWrapping;
@@ -118,7 +120,6 @@
  				
 				// var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 				var camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 2000 );
-				camera.lookAt(new THREE.Vector3(2,0,-0.5));
 				var renderer = new THREE.WebGLRenderer();
 				renderer.setSize(window.innerWidth, window.innerHeight);
 				document.body.appendChild(renderer.domElement);
@@ -136,7 +137,10 @@
 					mousePosY = event.clientY;
 				}
 				var render = function() {
-					if (counter % 10 == 0) {
+					if (difficulty < 19) {
+						difficulty = Math.floor(clock.getElapsedTime()/1);
+					}
+					if (counter % (20-difficulty) == 0) {
 
 						particles.push(createParticle());
 						for (var i = 0; i < particles.length; i++) {
@@ -150,7 +154,7 @@
 
 					renderer.render(scene, camera);
 					for (var i = 0; i < particles.length; i++) {
-							particles[i].position.x -= 10;
+							particles[i].position.x -= 10+difficulty;
 							particles[i].rotation.x += 0.05;
 							particles[i].rotation.y += 0.05;
 							particles[i].rotation.z += 0.05;
