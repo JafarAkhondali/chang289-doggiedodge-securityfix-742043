@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body {
+            background:#003366;		color:#fff;
+            padding:0;				margin:0;
+            overflow:hidden;		font-family:georgia;
+            text-align:center;
+        }
+        #b { position:absolute; top:0; right:0;
+            background:rgba(0,0,0,0.75); padding:1em;
+            border-radius: 0 0 0 30px;
+            -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,1) }
+    </style>
+
+
+
+
+
+</head>
+<body>
+<div id="b">?</div>
+<script type="text/javascript" src="js\three.js\build\three.js"></script>
+<script type="text/javascript" src="js\three.js\build\stats.js"></script>
+
+
+<script>
+    //			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+    var statsEnabled = false, container, stats;
+    var camera, scene, renderer, poptart, face, feet, tail;
+    var stars, numStars=10, rainbow, rainChunk, numRainChunks=30;
+    var mouseX = 0, mouseY = 0;
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
+    var clock = new THREE.Clock(), deltaSum=0, tick=0, frame=0, running=true;
+    var song = document.createElement('audio'), song2 = document.createElement('audio');
+
+    init();
+
+    animate();
+
+    function helper(o, x, y, z, w, h, d, c){
+        var material = new THREE.MeshLambertMaterial( { color: c} );
+        var geometry = new THREE.CubeGeometry(w, h, d, 1, 1, 1);
+        var mesh = new THREE.Mesh( geometry, material );
+        mesh.position.x=x+(w/2);
+        mesh.position.y=y-(h/2);
+        mesh.position.z=z+(d/2);
+        o.add( mesh );
+    }
+
+    function cube_construct(o, x, y, z, w, h, d, c){
+        var material = new THREE.MeshLambertMaterial( { color: c} );
+        var geometry = new THREE.CubeGeometry(w, h, d, 1, 1, 1);
+        var mesh = new THREE.Mesh( geometry, material );
+        mesh.position.x=x-(w/2);
+        mesh.position.y=y;
+        mesh.position.z=z;
+        o.add( mesh );
+    }
+
+    function init() {
+        container = document.createElement( 'div' );
+        document.body.appendChild( container );
+
+        camera = new THREE.PerspectiveCamera( 45,
+                window.innerWidth / window.innerHeight, .1, 10000 );
+        camera.position.z = 30;
+        camera.position.x = 0;
+        camera.position.y = 0;
+        scene = new THREE.Scene();
+//        scene.fog = new THREE.FogExp2( 0x003366, 0.0095 );
+
+
+        var xxx = new THREE.Object3D();
+        //face
+//        cube_construct(xxx,-5,0,0,10,10,1,"rgb(234,177,62)");
+//        cube_construct(xxx,-5.5,-2.5,0,7,5,1,"rgb(223,216,174)");
+//
+//        //mouth
+//        cube_construct(xxx,-6,-1,0,2,1.5,1,"rgb(0,0,0)");
+//        cube_construct(xxx,-6.5,-2,0,1,0.5,1,"rgb(0,0,0)");
+//        cube_construct(xxx,-6.5,-2.5,0,4,0.5,1,"rgb(0,0,0)");
+//        cube_construct(xxx,-10.5,-2,0,0.5,0.5,1,"rgb(0,0,0)");
+//
+//        //sunglass
+//        cube_construct(xxx,-6,2.5,0,8,0.5,1,"rgb(0,0,0)");
+//        cube_construct(xxx,-6,1.6,0,2.5,1.6,1,"rgb(0,0,0)");
+//        cube_construct(xxx,-10,1.5,0,3,2,1,"rgb(0,0,0)");
+
+        xxx.position.x=-70;
+        xxx.position.y=2;
+        xxx.position.z=-80;
+
+        scene.add(xxx);
+
+        //FACE
+        face=new THREE.Object3D();
+//        helper(	   face,   2,  -3,  -3,  12,   9,   4, 0x222222);
+//        helper(	   face,   0,  -5,   0,  16,   5,   1, 0x222222);
+//        helper(	   face,   1,  -1,   0,   4,  10,   1, 0x222222);
+//        helper(	   face,  11,  -1,   0,   4,  10,   1, 0x222222);
+//        helper(	   face,   3, -11,   0,  10,   2,   1, 0x222222);
+//        helper(	   face,   2,   0,   0,   2,   2,   1, 0x222222);
+//        helper(	   face,   4,  -2,   0,   2,   2,   1, 0x222222);
+//        helper(	   face,  12,   0,   0,   2,   2,   1, 0x222222);
+//        helper(	   face,  10,  -2,   0,   2,   2,   1, 0x222222);
+
+//        helper(	   face,   1, -5,   .5,  14,   5,   1, 0x999999);
+//        helper(	   face,   3, -4,   .5,  10,   8,   1, 0x999999);
+//        helper(	   face,   2, -1,   .5,   2,  10,   1, 0x999999);
+//        helper(	   face,  12, -1,   .5,   2,  10,   1, 0x999999);
+//        helper(	   face,   4, -2,   .5,   1,   2,   1, 0x999999);
+//        helper(	   face,   5, -3,   .5,   1,   1,   1, 0x999999);
+//        helper(	   face,  11, -2,   .5,   1,   2,   1, 0x999999);
+//        helper(	   face,  10, -3,   .5,   1,   1,   1, 0x999999);
+//        //Eyes
+//        helper(	   face,   4,  -6,  .6,   2,   2,   1, 0x222222);
+//        helper(	   face,  11,  -6,  .6,   2,   2,   1, 0x222222);
+//        helper(	   face,3.99,-5.99, .6,1.01,1.01,1.01, 0xffffff);
+//        helper(	  face,10.99,-5.99, .6,1.01,1.01,1.01, 0xffffff);
+//        //MOUTH
+//        helper(	   face,   5, -10,  .6,   7,   1,   1, 0x222222);
+//        helper(	   face,   5,  -9,  .6,   1,   2,   1, 0x222222);
+//        helper(	   face,   8,  -9,  .6,   1,   2,   1, 0x222222);
+//        helper(	   face,  11,  -9,  .6,   1,   2,   1, 0x222222);
+//        //CHEEKS
+//        helper(	   face,   2,  -8,  .6,   2,   2, .91, 0xff9999);
+//        helper(	   face,  13,  -8,  .6,   2,   2, .91, 0xff9999);
+
+        face.position.x=-.5;
+        face.position.y=4;
+        face.position.z=4;
+        scene.add(face);
+
+        var pointLight = new THREE.PointLight( 0xFFFFFF );
+        pointLight.position.z = 1000;
+        scene.add(pointLight);
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        container.appendChild( renderer.domElement );
+
+//        var ppp = new vector3(scene.position.x,scene.position.y,0);
+//        camera.lookAt( ppp );
+        camera.lookAt( scene.position );
+        renderer.render( scene, camera );
+    }
+
+
+
+</script>
+</body>
+</html>
