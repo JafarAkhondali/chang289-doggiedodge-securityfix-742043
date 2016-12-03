@@ -19,6 +19,9 @@
 			var particles = [];
 			var counter = 0;
 			var counterP = 0;
+			shadowLight = new THREE.DirectionalLight(0xffffff, .8);
+			shadowLight.position.set(1, 1, 1);
+ 			scene.add(shadowLight);
 
 			function getRandomColor() {
   				var letters = '0123456789ABCDEF';
@@ -33,9 +36,10 @@
 				var randomL = Math.random();
 				var randomW = Math.random();
 				var randomT = Math.random();
-				var geometry = new THREE.CubeGeometry(randomL*100, randomW*100, randomT * 100);
-				var c = getRandomColor();
-				var material = new THREE.MeshBasicMaterial({color : c});
+				var geometry = new THREE.BoxGeometry(randomL*100, randomW*100, randomT * 100);
+				var color = new THREE.Color( getRandomColor() );
+				var material = new THREE.MeshPhongMaterial({shading: THREE.FlatShading});
+				material.color = color;
 				var cube = new THREE.Mesh(geometry, material);
 				cube.position.x = 1000+randomL * 500;
 				cube.position.y = -1000+randomW * 2000;
@@ -46,8 +50,10 @@
 				var texture = new THREE.TextureLoader().load("/images/dog.jpg");
 				texture.wrapS = THREE.RepeatWrapping;
 				texture.wrapT = THREE.RepeatWrapping;
-
+ 				 light = new THREE.HemisphereLight(0xffffff, 0xffffff, .3)
+ 				
 				var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+
 				var renderer = new THREE.WebGLRenderer();
 				renderer.setSize(window.innerWidth, window.innerHeight);
 				document.body.appendChild(renderer.domElement);
@@ -57,9 +63,12 @@
 				var cube = new THREE.Mesh(geometry, material);
 				cube.position.x = -700;
 				cube.position.y=0;
+				scene.position.z = 50;
 				scene.add(cube);
+				scene.add(light);
 
 				camera.position.z = 1000;
+				// camera.lookAt(new THREE.Vector3(0,0,0));
 				var speedX = 0;
 				var speedY = 0;
 				window.addEventListener("mousemove", handleMouseMove) ;
@@ -68,7 +77,6 @@
 					mousePosY = event.clientY;
 				}
 				var render = function() {
-					console.log(counter);
 					if (counter % 10 == 0) {
 
 						particles.push(createParticle());
@@ -86,9 +94,12 @@
 							particles[i].position.x -= 10;
 							particles[i].rotation.x += 0.05;
 							particles[i].rotation.y += 0.05;
-						}
+							particles[i].rotation.z += 0.05;
+							if (particles[i].position <= -2000) {
+								scene.remove(particles[i]);
+							}
+					}
 					counter++;
-
 				};
 				render();
 			}
