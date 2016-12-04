@@ -12,6 +12,7 @@
 	  background: #2b2b2b;
 	}
 	body {
+	cursor: none;
 	  text-align: center;
 	  color: #ffffff;
 	}
@@ -47,6 +48,7 @@
 <script src="js\three.js\build\three.js"></script>
 <script>
 	var ballTexture = new THREE.TextureLoader().load("/images/pokeball1.jpg");
+		var texture = new THREE.TextureLoader().load("/images/cat.jpg");
 	var scene = new THREE.Scene();
 	var mousePosX = 0;
 	var mousePosY = 0;
@@ -104,8 +106,7 @@
 		return xxx;
 	}	
 	function initial() {
-		console.log("1");
-		for (var i = 0; i < particles.length; i++) {
+			for (var i = 0; i < particles.length; i++) {
 			scene.remove(particles[i]);
 		}
 		particles = [];
@@ -131,7 +132,6 @@
 	}
 	function detectCollision(doge, ball) {
 		if ((Math.abs(doge.position.x - ball.position.x) < 35) && (Math.abs(doge.position.y - ball.position.y) < 35)) {
-			console.log("Lose");
 			return 1;
 		}
 		else {
@@ -139,12 +139,11 @@
 		}
 	}
 	function main() {
-		var texture = new THREE.TextureLoader().load("/images/cat.jpg");
+
 		texture.wrapS = THREE.RepeatWrapping;
 		texture.wrapT = THREE.RepeatWrapping;
 		light = new THREE.HemisphereLight(0xffffff, 0xffffff, .3)
 			
-		// var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 		var camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 2000 );
 		var renderer = new THREE.WebGLRenderer();
 		renderer.setSize(window.innerWidth, window.innerHeight);
@@ -162,10 +161,11 @@
 		window.addEventListener("mousemove", handleMouseMove) ;
 		function handleMouseMove(event) {
 			mousePosX = event.clientX;
+			console.log(mousePosX);
 			mousePosY = event.clientY;
 		}
 		var render = function() {
-			if (difficulty < 19) {
+			if (difficulty < 18) {
 				difficulty = Math.floor(clock.getElapsedTime()/1);
 			}
 			if (counter % (20-difficulty) == 0) {
@@ -195,9 +195,7 @@
 					particles.shift();
 				}
 			}
-			console.log(particles.length);
 			counter++;
-			console.log(lose);
 		};
 		countUp(9999);
 		render();
