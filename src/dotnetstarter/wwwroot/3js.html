@@ -12,7 +12,7 @@
 	  background: #2b2b2b;
 	}
 	body {
-	cursor: none;
+	  cursor: none;
 	  text-align: center;
 	  color: #ffffff;
 	}
@@ -28,8 +28,17 @@
 	  -moz-border-radius: 4px;
 	  -webkit-border-radius: 4px;
 	  border-radius: 4px;
-	  display: inline-block;
 	  background: rgba(255, 255, 255, 0.1);
+	  
+	  position:absolute;
+	  width:150px;
+	  top:5%;
+	  margin: auto;
+	  margin-top:0px;
+	  font-family:'Open Sans', sans-serif;
+	  text-transform: uppercase;
+	  text-align : center;
+
 	}
 	.count.glow {
 	  text-shadow: 0 0 4px #ffffff;
@@ -38,8 +47,8 @@
 
 <body>
 	<div id="world">
-	<div class="count">0</div>
 	</div>
+	<div class="count">0</div>
 
 </body>
 
@@ -48,7 +57,7 @@
 <script src="js\three.js\build\three.js"></script>
 <script>
 	var ballTexture = new THREE.TextureLoader().load("/images/pokeball1.jpg");
-		var texture = new THREE.TextureLoader().load("/images/cat.jpg");
+	var texture = new THREE.TextureLoader().load("/images/cat.jpg");
 	var scene = new THREE.Scene();
 	var mousePosX = 0;
 	var mousePosY = 0;
@@ -195,30 +204,32 @@
 					particles.shift();
 				}
 			}
+			countUp(Math.floor(clock.getElapsedTime()*100));
 			counter++;
 		};
-		countUp(9999);
 		render();
 	}
 	function countUp(count)
 	{
-	  var div_by = 1000,
-	      speed = Math.round(count / div_by),
-	      $display = $('.count'),
-	      run_count = 1,
-	      int_speed = 24;
+	  // var div_by = 1000,
+	  //     speed = Math.round(count / div_by),
+	  //     $display = $('.count'),
+	  //     run_count = 1,
+	  //     int_speed = 24;
 	  
-	  var int = setInterval(function() {
-	    if(run_count < div_by){
-	      $display.text(speed * run_count);
-	      run_count++;
-	    } else if(parseInt($display.text()) < count) {
-	      var curr_count = parseInt($display.text()) + 1;
-	      $display.text(curr_count);
-	    } else {
-	      clearInterval(int);
-	    }
-	  }, int_speed);
+	  // var int = setInterval(function() {
+	  //   if(run_count < div_by){
+	  //     $display.text(speed * run_count);
+	  //     run_count++;
+	  //   } else if(parseInt($display.text()) < count) {
+	  //     var curr_count = parseInt($display.text()) + 1;
+	  //     $display.text(curr_count);
+	  //   } else {
+	  //     clearInterval(int);
+	  //   }
+	  // }, int_speed);
+	  $display = $('.count'),
+	  $display.text(count);
 	}
 	main();
 </script>
