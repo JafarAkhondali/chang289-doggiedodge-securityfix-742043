@@ -118,7 +118,8 @@
 <script>
 	var ballTexture = new THREE.TextureLoader().load("/images/pokeball1.jpg");
 	var texture = new THREE.TextureLoader().load("/images/cat.jpg");
-	var failTexture = new THREE.TextureLoader().load("/images/sick.png");
+	var failTexture = new THREE.TextureLoader().load("/images/gg.gif");
+	var startTexture = new THREE.TextureLoader().load("/images/start.jpg");
 	var scene = new THREE.Scene();
 	var mousePosX = 0;
 	var mousePosY = 0;
@@ -132,7 +133,9 @@
 	var difficulty = 0;
 	var lose = 0;
 	var started = 0;
-	detectStart();
+	var renderer = new THREE.WebGLRenderer();
+	var camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 2000 );
+	var light = new THREE.HemisphereLight(0xffffff, 0xffffff, .3);
 	function cube_construct(o, x, y, z, w, h, d, c){
 		x=x*5;
 		y=y*5;
@@ -150,9 +153,23 @@
 		mesh.position.y=y;
 		mesh.position.z=z;
 		o.add( mesh );
+		return mesh;
 	}
 
 	function detectStart() {
+		scene.background = startTexture;
+		scene.add(light);
+		renderer.setSize(window.innerWidth, window.innerHeight);
+		container = document.getElementById('world');
+		container.appendChild(renderer.domElement);
+
+		var render = function() {
+			requestAnimationFrame( render );
+			renderer.render(scene, camera);
+		};
+		render();
+		console.log("???");
+		console.log("!!!!");
 		window.addEventListener("click", clicked);
 	}
 
@@ -186,12 +203,11 @@
 		cube_construct(xxx,-5.5,6,0,2,1,1,"rgb(255, 223, 174)")
 		cube_construct(xxx,-6,6.6,0,1,0.5,1,"rgb(255, 223, 174)")
 		cube_construct(xxx,-6.25,7,0,0.5,0.25,1,"rgb(255, 223, 174)")
-		xxx.position.x=-700;
 		return xxx;
 	}
 	function initial() {
 		scene.visible = true;
-		scene.background = texture;
+		scene.background = null;
 
 		lose = 0;
 		for (var i = 0; i < particles.length; i++) {
@@ -225,7 +241,7 @@
 		return sphere;
 	}
 	function detectCollision(doge, ball) {
-		if ((Math.abs(doge.position.x - ball.position.x) < 35) && (Math.abs(doge.position.y - ball.position.y) < 35)) {
+		if (Math.sqrt((doge.position.x - 50 - ball.position.x) * (doge.position.x - 50 - ball.position.x) + (doge.position.y - ball.position.y) * (doge.position.y - ball.position.y)) < 50) {
 			return 1;
 		}
 		else {
@@ -251,17 +267,14 @@
 
 		song.play();
 		texture.wrapS = THREE.RepeatWrapping;
-		texture.wrapT = THREE.RepeatWrapping;
-		light = new THREE.HemisphereLight(0xffffff, 0xffffff, .3)
-
-		var camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 2000 );
-		var renderer = new THREE.WebGLRenderer();
+		texture.wrapT = THREE.RepeatWrapping;		
+		
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		container = document.getElementById('world');
 		container.appendChild(renderer.domElement);
 		var cube = dogGenerator();
 		cube.position.z = 0;
-		scene.background = texture;
+		scene.background = null;
 		scene.position.z = 100;
 		scene.add(cube);
 		scene.add(light);
@@ -291,6 +304,7 @@
 			if (lose == 0) {
 				cube.position.x = (mousePosX - 1/2 * window.innerWidth);
 				cube.position.y=-(mousePosY - 1/2 * window.innerHeight);
+
 			}
 			renderer.render(scene, camera);
 			for (var i = 0; i < particles.length; i++) {
@@ -323,6 +337,7 @@
 	  $display = $('.count'),
 	  $display.text(count);
 	}
+	detectStart();
 
 </script>
 </html>

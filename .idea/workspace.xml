@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6764ba2-6e2b-4b6f-bd31-2b5576c47dd3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/gg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/ult_start.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html" />
     </list>
     <ignored path="DoggieDodge.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,19 +62,33 @@
         <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="175">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="79" selection-end-column="20" />
+              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="3js.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gg.gif" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/gg.gif">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3js.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
+            <state relative-caret-position="229">
+              <caret line="151" column="39" selection-start-line="151" selection-start-column="39" selection-end-line="151" selection-end-column="39" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sick.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/sick.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -108,8 +124,8 @@
         <option value="$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_camera.html" />
         <option value="$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_example.html" />
         <option value="$USER_HOME$/Desktop/nyan.html" />
-        <option value="$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html" />
         <option value="$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html" />
+        <option value="$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html" />
       </list>
     </option>
   </component>
@@ -239,12 +255,12 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Yibih/Desktop/nyan.html" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\DoggieDodge\src\dotnetstarter\wwwroot" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\DoggieDodge\src\dotnetstarter\wwwroot" />
       <recent name="D:\DoggieDodge\src\dotnetstarter\wwwroot\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\DoggieDodge\src\dotnetstarter\wwwroot" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.3js.html">
@@ -341,15 +357,15 @@
       <workItem from="1480714843093" duration="82000" />
       <workItem from="1480714935342" duration="472000" />
       <workItem from="1480715417633" duration="42388000" />
-      <workItem from="1480823051669" duration="1593000" />
+      <workItem from="1480823051669" duration="4058000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45208000" />
+    <option name="totallyTimeSpent" value="47673000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25297618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -594,20 +610,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="79" selection-end-column="20" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/sick.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
+        <state relative-caret-position="229">
+          <caret line="151" column="39" selection-start-line="151" selection-start-column="39" selection-end-line="151" selection-end-column="39" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/gg.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
