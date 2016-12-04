@@ -12,6 +12,7 @@
 		background: #2b2b2b;
 	}
 	body {
+		cursor: none;
 		text-align: center;
 		color: #ffffff;
 	}
@@ -27,8 +28,16 @@
 		-moz-border-radius: 4px;
 		-webkit-border-radius: 4px;
 		border-radius: 4px;
-		display: inline-block;
 		background: rgba(255, 255, 255, 0.1);
+
+		position:absolute;
+		width:150px;
+		top:5%;
+		margin: auto;
+		margin-top:0px;
+		font-family:'Open Sans', sans-serif;
+		text-transform: uppercase;
+		text-align : center;
 	}
 	.count.glow {
 		text-shadow: 0 0 4px #ffffff;
@@ -37,8 +46,8 @@
 
 <body>
 <div id="world">
-	<div class="count">0</div>
 </div>
+<div class="count">0</div>
 
 </body>
 
@@ -47,6 +56,7 @@
 <script src="js\three.js\build\three.js"></script>
 <script>
 	var ballTexture = new THREE.TextureLoader().load("/images/pokeball1.jpg");
+	var texture = new THREE.TextureLoader().load("/images/cat.jpg");
 	var scene = new THREE.Scene();
 	var mousePosX = 0;
 	var mousePosY = 0;
@@ -104,7 +114,6 @@
 		return xxx;
 	}
 	function initial() {
-		console.log("1");
 		for (var i = 0; i < particles.length; i++) {
 			scene.remove(particles[i]);
 		}
@@ -131,7 +140,6 @@
 	}
 	function detectCollision(doge, ball) {
 		if ((Math.abs(doge.position.x - ball.position.x) < 35) && (Math.abs(doge.position.y - ball.position.y) < 35)) {
-			console.log("Lose");
 			return 1;
 		}
 		else {
@@ -144,13 +152,10 @@
 		song.setAttribute('loop', 'true');
 
 		song.play();
-
-		var texture = new THREE.TextureLoader().load("/images/cat.jpg");
 		texture.wrapS = THREE.RepeatWrapping;
 		texture.wrapT = THREE.RepeatWrapping;
 		light = new THREE.HemisphereLight(0xffffff, 0xffffff, .3)
 
-		// var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 		var camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 2000 );
 		var renderer = new THREE.WebGLRenderer();
 		renderer.setSize(window.innerWidth, window.innerHeight);
@@ -168,6 +173,7 @@
 		window.addEventListener("mousemove", handleMouseMove) ;
 		function handleMouseMove(event) {
 			mousePosX = event.clientX;
+			console.log(mousePosX);
 			mousePosY = event.clientY;
 		}
 		var render = function() {
@@ -201,36 +207,40 @@
 					particles.shift();
 				}
 			}
-			console.log(particles.length);
+			countUp(Math.floor(clock.getElapsedTime()*100));
 			counter++;
-			console.log(lose);
 		};
-		countUp(9999);
 		render();
 	}
 	function countUp(count)
 	{
-		var div_by = 1000,
-				speed = Math.round(count / div_by),
-				$display = $('.count'),
-				run_count = 1,
-				int_speed = 24;
+		// var div_by = 1000,
+		//     speed = Math.round(count / div_by),
+		//     $display = $('.count'),
+		//     run_count = 1,
+		//     int_speed = 24;
 
-		var int = setInterval(function() {
-			if(run_count < div_by){
-				$display.text(speed * run_count);
-				run_count++;
-			} else if(parseInt($display.text()) < count) {
-				var curr_count = parseInt($display.text()) + 1;
-				$display.text(curr_count);
-			} else {
-				clearInterval(int);
-			}
-		}, int_speed);
+		// var int = setInterval(function() {
+		//   if(run_count < div_by){
+		//     $display.text(speed * run_count);
+		//     run_count++;
+		//   } else if(parseInt($display.text()) < count) {
+		//     var curr_count = parseInt($display.text()) + 1;
+		//     $display.text(curr_count);
+		//   } else {
+		//     clearInterval(int);
+		//   }
+		// }, int_speed);
+		$display = $('.count'),
+				$display.text(count);
 	}
-	function game_over(){
+
+	function game_over() {
 		
 	}
+
+
+
 	main();
 </script>
 </html>
