@@ -147,6 +147,7 @@
 		mesh.position.y=y;
 		mesh.position.z=z;
 		o.add( mesh );
+		return mesh;
 	}
 	function dogGenerator() {
 		var xxx = new THREE.Object3D();
@@ -171,7 +172,6 @@
 		cube_construct(xxx,-5.5,6,0,2,1,1,"rgb(255, 223, 174)")
 		cube_construct(xxx,-6,6.6,0,1,0.5,1,"rgb(255, 223, 174)")
 		cube_construct(xxx,-6.25,7,0,0.5,0.25,1,"rgb(255, 223, 174)")
-		xxx.position.x=-700;
 		return xxx;
 	}
 	function initial() {
@@ -206,7 +206,7 @@
 		return sphere;
 	}
 	function detectCollision(doge, ball) {
-		if ((Math.abs(doge.position.x - ball.position.x) < 5) && (Math.abs(doge.position.y - ball.position.y) < 35)) {
+		if (Math.sqrt((doge.position.x - 50 - ball.position.x) * (doge.position.x - 50 - ball.position.x) + (doge.position.y - ball.position.y) * (doge.position.y - ball.position.y)) < 50) {
 			return 1;
 		}
 		else {
@@ -265,12 +265,11 @@
 					counterP++;
 				}
 			}
-			console.log("ball" + particles.length);
-			console.log(lose);
 			requestAnimationFrame( render );
 			if (lose == 0) {
 				cube.position.x = (mousePosX - 1/2 * window.innerWidth);
 				cube.position.y=-(mousePosY - 1/2 * window.innerHeight);
+
 			}
 			renderer.render(scene, camera);
 			for (var i = 0; i < particles.length; i++) {
