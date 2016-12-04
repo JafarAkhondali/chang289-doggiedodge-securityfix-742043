@@ -206,7 +206,7 @@
 		return sphere;
 	}
 	function detectCollision(doge, ball) {
-		if ((Math.abs(doge.position.x - ball.position.x) < 35) && (Math.abs(doge.position.y - ball.position.y) < 35)) {
+		if ((Math.abs(doge.position.x - ball.position.x) < 5) && (Math.abs(doge.position.y - ball.position.y) < 35)) {
 			return 1;
 		}
 		else {
@@ -216,7 +216,9 @@
 
 
 	function gameOver(){
+		clock = new THREE.Clock();
 	  fieldGameOver.className = "show";
+
 	}
 
 	function main() {
@@ -248,7 +250,6 @@
 		window.addEventListener("mousemove", handleMouseMove) ;
 		function handleMouseMove(event) {
 			mousePosX = event.clientX;
-			console.log(mousePosX);
 			mousePosY = event.clientY;
 		}
 		var render = function() {
@@ -256,22 +257,26 @@
 				difficulty = Math.floor(clock.getElapsedTime()/1);
 			}
 			if (counter % (20-difficulty) == 0) {
-				particles.push(createParticle());
-				for (var i = 0; i < particles.length; i++) {
-					scene.add(particles[i]);
+				if (lose == 0) {
+					particles.push(createParticle());
+					for (var i = 0; i < particles.length; i++) {
+						scene.add(particles[i]);
+					}
+					counterP++;
 				}
-				counterP++;
 			}
+			console.log("ball" + particles.length);
+			console.log(lose);
 			requestAnimationFrame( render );
-			cube.position.x = (mousePosX - 1/2 * window.innerWidth);
-			cube.position.y=-(mousePosY - 1/2 * window.innerHeight);
+			if (lose == 0) {
+				cube.position.x = (mousePosX - 1/2 * window.innerWidth);
+				cube.position.y=-(mousePosY - 1/2 * window.innerHeight);
+			}
 			renderer.render(scene, camera);
 			for (var i = 0; i < particles.length; i++) {
-				lose = detectCollision(cube, particles[i]);
-				if (lose == 1) {
+				lose = lose + detectCollision(cube, particles[i]);
+				if (lose != 0) {
 					gameOver();
-					lose = 0;
-					//initial();
 					break;
 				}
 				particles[i].position.x -= 10+difficulty;
@@ -283,8 +288,10 @@
 					particles.shift();
 				}
 			}
-			countUp(Math.floor(clock.getElapsedTime()*100));
-			counter++;
+			if (lose == 0) {
+				countUp(Math.floor(clock.getElapsedTime()*100));
+				counter++;
+			}
 		};
 		render();
 	}
