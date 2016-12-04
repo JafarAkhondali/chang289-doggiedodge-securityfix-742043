@@ -104,9 +104,9 @@
 <body>
 	<div id="world"></div>
 
-	<div id="gameoverInstructions">
+	<!-- <div id="gameoverInstructions">
 	  Game Over
-	</div>
+	</div> -->
 
 	<div class="count" id="counter">0</div>
 
@@ -118,6 +118,7 @@
 <script>
 	var ballTexture = new THREE.TextureLoader().load("/images/pokeball1.jpg");
 	var texture = new THREE.TextureLoader().load("/images/cat.jpg");
+	var failTexture = new THREE.TextureLoader().load("/images/sick.png");
 	var scene = new THREE.Scene();
 	var mousePosX = 0;
 	var mousePosY = 0;
@@ -130,6 +131,8 @@
 	var clock = new THREE.Clock();
 	var difficulty = 0;
 	var lose = 0;
+	var started = 0;
+	detectStart();
 	function cube_construct(o, x, y, z, w, h, d, c){
 		x=x*5;
 		y=y*5;
@@ -138,9 +141,9 @@
 		h=h*5;
 		d=d*50;
 		var material = new THREE.MeshLambertMaterial(
-				{
-					color: c
-				} );
+		{
+			color: c
+		} );
 		var geometry = new THREE.CubeGeometry(w, h, d, 1, 1, 1);
 		var mesh = new THREE.Mesh( geometry, material );
 		mesh.position.x=x-(w/2);
@@ -148,6 +151,18 @@
 		mesh.position.z=z;
 		o.add( mesh );
 	}
+
+	function detectStart() {
+		window.addEventListener("click", clicked);
+	}
+
+	function clicked() {
+		if (started == 0) {
+			started = 1;
+			main();
+		}
+	}
+
 	function dogGenerator() {
 		var xxx = new THREE.Object3D();
 		//face
@@ -175,6 +190,10 @@
 		return xxx;
 	}
 	function initial() {
+		scene.visible = true;
+		scene.background = texture;
+
+		lose = 0;
 		for (var i = 0; i < particles.length; i++) {
 			scene.remove(particles[i]);
 		}
@@ -184,8 +203,8 @@
 	}
 
 	function initUI(){
-	  fieldDistance = document.getElementById("counter");
-	  fieldGameOver = document.getElementById("gameoverInstructions");
+	  // fieldDistance = document.getElementById("counter");
+	  // fieldGameOver = document.getElementById("gameoverInstructions");
 	}
 
 	function createParticle() {
@@ -206,7 +225,7 @@
 		return sphere;
 	}
 	function detectCollision(doge, ball) {
-		if ((Math.abs(doge.position.x - ball.position.x) < 5) && (Math.abs(doge.position.y - ball.position.y) < 35)) {
+		if ((Math.abs(doge.position.x - ball.position.x) < 35) && (Math.abs(doge.position.y - ball.position.y) < 35)) {
 			return 1;
 		}
 		else {
@@ -217,8 +236,10 @@
 
 	function gameOver(){
 		clock = new THREE.Clock();
-	  fieldGameOver.className = "show";
-
+		scene.background = failTexture;
+	  	// fieldGameOver.className = "show";
+	  	// fieldGameOver.style.display = "block";
+	  	scene.visible = false;
 	}
 
 	function main() {
@@ -265,8 +286,7 @@
 					counterP++;
 				}
 			}
-			console.log("ball" + particles.length);
-			console.log(lose);
+
 			requestAnimationFrame( render );
 			if (lose == 0) {
 				cube.position.x = (mousePosX - 1/2 * window.innerWidth);
@@ -277,6 +297,9 @@
 				lose = lose + detectCollision(cube, particles[i]);
 				if (lose != 0) {
 					gameOver();
+					$( document.body ).click(function() {
+						initial();
+					});
 					break;
 				}
 				particles[i].position.x -= 10+difficulty;
@@ -297,33 +320,9 @@
 	}
 	function countUp(count)
 	{
-
-		// var div_by = 1000,
-		//     speed = Math.round(count / div_by),
-		//     $display = $('.count'),
-		//     run_count = 1,
-		//     int_speed = 24;
-
-		// var int = setInterval(function() {
-		//   if(run_count < div_by){
-		//     $display.text(speed * run_count);
-		//     run_count++;
-		//   } else if(parseInt($display.text()) < count) {
-		//     var curr_count = parseInt($display.text()) + 1;
-		//     $display.text(curr_count);
-		//   } else {
-		//     clearInterval(int);
-		//   }
-		// }, int_speed);
-
 	  $display = $('.count'),
 	  $display.text(count);
 	}
 
-
-
-
-
-	main();
 </script>
 </html>
