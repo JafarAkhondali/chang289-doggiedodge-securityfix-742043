@@ -43,12 +43,45 @@
 	.count.glow {
 	  text-shadow: 0 0 4px #ffffff;
 	}
+
+	#gameoverInstructions {
+	  position: absolute;
+	  font-family: 'Voltaire', sans-serif;
+	  font-weight: bold;
+	  text-transform: uppercase;
+	  font-size: 120px;
+	  text-align: center;
+	  color: #ffc5a2;
+	  opacity: 0;
+	  left: 50%;
+	  top: 50%;
+	  width: 100%;
+	  -webkit-transform: translate(-50%, -100%);
+	          transform: translate(-50%, -100%);
+	  -webkit-user-select: none;
+	     -moz-user-select: none;
+	      -ms-user-select: none;
+	          user-select: none;
+	  -webkit-transition: all 500ms ease-in-out;
+	  transition: all 500ms ease-in-out;
+	}
+	#gameoverInstructions.show {
+	  opacity: 1;
+	  -webkit-transform: translate(-50%, -50%);
+	          transform: translate(-50%, -50%);
+	  -webkit-transition: all 500ms ease-in-out;
+	  transition: all 500ms ease-in-out;
+	}
+
 </style>
 
 <body>
+	<div id="gameoverInstructions">
+	  Game Over
+	</div>
 	<div id="world">
 	</div>
-	<div class="count">0</div>
+	<div class="count" id="counter">0</div>
 
 </body>
 
@@ -122,6 +155,12 @@
 		clock = new THREE.Clock();	
 		difficulty = 0;		
 	}
+
+	function initUI(){
+	  fieldDistance = document.getElementById("counter");
+	  fieldGameOver = document.getElementById("gameoverInstructions");
+	}
+
 	function createParticle() {
 		var randomL = Math.random();
 		 var randomW = Math.random();
@@ -147,8 +186,13 @@
 			return 0;
 		}
 	}
-	function main() {
 
+	function gameOver(){
+	  fieldGameOver.className = "show";
+	}
+
+	function main() {
+ 		initUI();
 		texture.wrapS = THREE.RepeatWrapping;
 		texture.wrapT = THREE.RepeatWrapping;
 		light = new THREE.HemisphereLight(0xffffff, 0xffffff, .3)
@@ -191,8 +235,9 @@
 			for (var i = 0; i < particles.length; i++) {
 				lose = detectCollision(cube, particles[i]);
 				if (lose == 1) {
+					gameOver();
 					lose = 0;
-					initial();
+					//initial();
 					break;
 				}
 				particles[i].position.x -= 10+difficulty;
@@ -211,23 +256,6 @@
 	}
 	function countUp(count)
 	{
-	  // var div_by = 1000,
-	  //     speed = Math.round(count / div_by),
-	  //     $display = $('.count'),
-	  //     run_count = 1,
-	  //     int_speed = 24;
-	  
-	  // var int = setInterval(function() {
-	  //   if(run_count < div_by){
-	  //     $display.text(speed * run_count);
-	  //     run_count++;
-	  //   } else if(parseInt($display.text()) < count) {
-	  //     var curr_count = parseInt($display.text()) + 1;
-	  //     $display.text(curr_count);
-	  //   } else {
-	  //     clearInterval(int);
-	  //   }
-	  // }, int_speed);
 	  $display = $('.count'),
 	  $display.text(count);
 	}
