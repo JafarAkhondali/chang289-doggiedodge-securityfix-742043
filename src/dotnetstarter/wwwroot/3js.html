@@ -48,8 +48,6 @@
 <script>
 	var ballTexture = new THREE.TextureLoader().load("/images/pokeball1.jpg");
 	var scene = new THREE.Scene();
-	var color = new THREE.Color("rgb(255,255,255)");
-	scene.background = color;
 	var mousePosX = 0;
 	var mousePosY = 0;
 	var particles = [];
@@ -141,7 +139,13 @@
 		}
 	}
 	function main() {
-		var texture = new THREE.TextureLoader().load("/images/dog.jpg");
+		var song = document.createElement('audio');
+		song.setAttribute('src', 'Ridin.mp3');
+		song.setAttribute('loop', 'true');
+
+		song.play();
+
+		var texture = new THREE.TextureLoader().load("/images/cat.jpg");
 		texture.wrapS = THREE.RepeatWrapping;
 		texture.wrapT = THREE.RepeatWrapping;
 		light = new THREE.HemisphereLight(0xffffff, 0xffffff, .3)
@@ -154,6 +158,7 @@
 		container.appendChild(renderer.domElement);
 		var cube = dogGenerator();
 		cube.position.z = 0;
+		scene.background = texture;
 		scene.position.z = 100;
 		scene.add(cube);
 		scene.add(light);
@@ -166,7 +171,7 @@
 			mousePosY = event.clientY;
 		}
 		var render = function() {
-			if (difficulty < 19) {
+			if (difficulty < 18) {
 				difficulty = Math.floor(clock.getElapsedTime()/1);
 			}
 			if (counter % (20-difficulty) == 0) {
@@ -222,6 +227,9 @@
 				clearInterval(int);
 			}
 		}, int_speed);
+	}
+	function game_over(){
+		
 	}
 	main();
 </script>

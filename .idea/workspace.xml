@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6764ba2-6e2b-4b6f-bd31-2b5576c47dd3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/images/cat.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/images/doge.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/sick.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html" afterPath="$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html" />
     </list>
     <ignored path="DoggieDodge.iws" />
@@ -48,8 +52,8 @@
       <file leaf-file-name="wyb_practice_example.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_example.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+            <state relative-caret-position="170">
+              <caret line="31" column="50" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -58,8 +62,8 @@
       <file leaf-file-name="doge_pixel.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-561">
-              <caret line="39" column="64" selection-start-line="39" selection-start-column="64" selection-end-line="39" selection-end-column="64" />
+            <state relative-caret-position="175">
+              <caret line="75" column="17" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -68,8 +72,8 @@
       <file leaf-file-name="3js.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+            <state relative-caret-position="394">
+              <caret line="231" column="8" selection-start-line="231" selection-start-column="8" selection-end-line="231" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -339,18 +343,18 @@
       <workItem from="1480714489054" duration="344000" />
       <workItem from="1480714843093" duration="82000" />
       <workItem from="1480714935342" duration="472000" />
-      <workItem from="1480715417633" duration="38832000" />
+      <workItem from="1480715417633" duration="42388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40059000" />
+    <option name="totallyTimeSpent" value="43615000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25297618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -521,18 +525,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_camera.html">
+    <entry file="file://$USER_HOME$/Desktop/nyan.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+        <state relative-caret-position="170">
+          <caret line="294" column="24" selection-start-line="294" selection-start-column="20" selection-end-line="294" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_example.html">
+    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_camera.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+        <state relative-caret-position="697">
+          <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -545,26 +549,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/nyan.html">
+    <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/wyb_practice_example.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="294" column="24" selection-start-line="294" selection-start-column="20" selection-end-line="294" selection-end-column="24" />
+          <caret line="31" column="50" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/doge_pixel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561">
-          <caret line="39" column="64" selection-start-line="39" selection-start-column="64" selection-end-line="39" selection-end-column="64" />
+        <state relative-caret-position="175">
+          <caret line="75" column="17" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dotnetstarter/wwwroot/3js.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        <state relative-caret-position="394">
+          <caret line="231" column="8" selection-start-line="231" selection-start-column="8" selection-end-line="231" selection-end-column="8" />
           <folding />
         </state>
       </provider>
